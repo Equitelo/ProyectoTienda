@@ -39,6 +39,7 @@ public class ProyectProgra {
         int cobroC=0;
         
         //Para facturas
+        double porcentaje=0;
         double descuento=0;
         double impuesto=0;
         double subtotal=0;
@@ -106,48 +107,137 @@ public class ProyectProgra {
                         // cliente A ventas
                         
                         if(codigoV==1){
+                            //azucar ventas
                             System.out.println("Cuantos kilogramos de azucar desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             
                             //logica de facturacion
                             if((azucarKg>=cantidadVenta)){
+                                
                                 cobroV=cantidadVenta*azucarVentas;
-                            
                             
                                 if(cobroV>=1000&&cobroV<=5000){
                                     descuento=cobroV*0.05;
+                                    porcentaje=5;
 
-                                }
-                                if(cobroV>=5000){
+                                }else if(cobroV>=5000){
                                     descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
                                 }
-
-                                subtotal=cobroV-descuento;
-
+                                
                                 impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
 
-                                System.out.println("Total: "+impuesto);
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
                         
                         }else if(codigoV==2){
-                            System.out.println("Cuantos kilogramos de azucar desea?: "); 
+                            //avena ventas
+                            System.out.println("Cuantos kilogramos de avena desea?: "); 
                             int cantidadVenta=lea.nextInt();
-                            
+                            //facturizacion
                             if(avenaKg>=cantidadVenta){
                             
+                                cobroV=cantidadVenta*azucarVentas;
+                            
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+                                    porcentaje=5;
+
+                                }else if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
+                                }
+                                
+                                impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
+
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
                             
                         }else if(codigoV==3){
+                            //trigo ventas
                             System.out.println("Cuantos kilogramos de trigo desea?: "); 
                             int cantidadVenta=lea.nextInt();
+                            //facturizacion
+                            if(trigoKg>=cantidadVenta){
+                                
+                                cobroV=cantidadVenta*azucarVentas;
+                            
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+                                    porcentaje=5;
+
+                                }else if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
+                                }
+                                
+                                impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
+
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
+                            }else{
+                                System.out.println("No tienes para vender!");
+                            }
                             
                         }else if(codigoV==4){
+                            //maiz ventas
                             System.out.println("Cuantos kilogramos de maiz desea?: "); 
                             int cantidadVenta=lea.nextInt();
+                            
+                            if(maizKg>=cantidadVenta){
+                                cobroV=cantidadVenta*azucarVentas;
+                            
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+                                    porcentaje=5;
+
+                                }else if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
+                                }
+                                
+                                impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
+
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
+                            }else{
+                                System.out.println("No tienes para vender!");
+                            }
+                            
                         }else{
                             System.out.println("Escoge un codigo dentro de las opciones la proxima vez!");
                         }

@@ -88,6 +88,9 @@ public class ProyectProgra {
                     System.out.print("Cliente A, B o C: ");
                     cliente=lea.next();
                     if(cliente.equalsIgnoreCase("a")){
+                        int codigoV;
+                        do{
+                        System.out.println("");
                         System.out.println("Los productos para el cliente A: ");
                         System.out.println("***********************************************");
                         System.out.println("* Codigo *     Producto     *   Precio venta  *");
@@ -102,8 +105,13 @@ public class ProyectProgra {
                         System.out.println("***********************************************");
                         System.out.println("");
                         System.out.print("Ingresar codigo del producto: ");
-                        int codigoV=lea.nextInt();
+                        codigoV=lea.nextInt();
                         
+                        if(codigoV<0||codigoV>4){
+                            System.out.println("Elige un codigo dentro del listado.");
+                        }
+                        
+                        }while(codigoV<0||codigoV>4);
                         // cliente A ventas
                         
                         if(codigoV==1){
@@ -241,8 +249,10 @@ public class ProyectProgra {
                         }else{
                             System.out.println("Escoge un codigo dentro de las opciones la proxima vez!");
                         }
-                    }
-                    else if(cliente.equalsIgnoreCase("b")){
+                    }else if(cliente.equalsIgnoreCase("b")){
+                        int codigoV;
+                        do{
+                        System.out.println("");
                         System.out.println("Los productos para el cliente B: ");
                         System.out.println("***********************************************");
                         System.out.println("* Codigo *     Producto     *   Precio venta  *");
@@ -255,10 +265,121 @@ public class ProyectProgra {
                         System.out.println("***********************************************");
                         System.out.println("");
                         System.out.print("Ingresar codigo del producto: ");
+                        codigoV=lea.nextInt();
                         
+                        if(codigoV<0||codigoV>3){
+                            System.out.println("Escoge un codigo dentro del listado.");
+                        }
+                        
+                        }while(codigoV<0||codigoV>3);
                         // cliente B ventas
-                    }
-                    else if(cliente.equalsIgnoreCase("c")){
+                        
+                        if(codigoV==1){
+                            //azucar ventas
+                            System.out.println("Cuantos kilogramos de azucar desea?: "); 
+                            int cantidadVenta=lea.nextInt();
+                            
+                            //logica de facturacion
+                            if((azucarKg>=cantidadVenta)){
+                                
+                                cobroV=cantidadVenta*azucarVentas;
+                            
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+                                    porcentaje=5;
+
+                                }else if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
+                                }
+                                
+                                impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
+
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
+                            }else{
+                                System.out.println("No tienes para vender!");
+                            }
+                        
+                        }else if(codigoV==2){
+                            //avena ventas
+                            System.out.println("Cuantos kilogramos de avena desea?: "); 
+                            int cantidadVenta=lea.nextInt();
+                            //facturizacion
+                            if(avenaKg>=cantidadVenta){
+                            
+                                cobroV=cantidadVenta*azucarVentas;
+                            
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+                                    porcentaje=5;
+
+                                }else if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
+                                }
+                                
+                                impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
+
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
+                            }else{
+                                System.out.println("No tienes para vender!");
+                            }
+                            
+                        }else if(codigoV==3){
+                            //trigo ventas
+                            System.out.println("Cuantos kilogramos de trigo desea?: "); 
+                            int cantidadVenta=lea.nextInt();
+                            //facturizacion
+                            if(trigoKg>=cantidadVenta){
+                                
+                                cobroV=cantidadVenta*azucarVentas;
+                            
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+                                    porcentaje=5;
+
+                                }else if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
+                                }
+                                
+                                impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
+
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
+                            }else{
+                                System.out.println("No tienes para vender!");
+                            }
+                        }else{
+                            System.out.println("No");
+                        }
+                    }else if(cliente.equalsIgnoreCase("c")){
+                        int codigoV;
+                        do{
+                        System.out.println("");
                         System.out.println("Los productos para el cliente C: ");
                         System.out.println("***********************************************");
                         System.out.println("* Codigo *     Producto     *   Precio venta  *");
@@ -267,8 +388,47 @@ public class ProyectProgra {
                         System.out.println("***********************************************");
                         System.out.println("");
                         System.out.print("Ingresar codigo del producto: ");
+                        codigoV=lea.nextInt();
                         
+                        if(codigoV!=4){
+                            System.out.println("Escoge un codigo dentro del listado.");
+                        }
+                        
+                        }while(codigoV!=4);
                         //cliente C ventas
+                        
+                        if(codigoV==4){
+                            //maiz ventas
+                            System.out.println("Cuantos kilogramos de maiz desea?: "); 
+                            int cantidadVenta=lea.nextInt();
+                            
+                            if(maizKg>=cantidadVenta){
+                                cobroV=cantidadVenta*azucarVentas;
+                            
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+                                    porcentaje=5;
+
+                                }else if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                    porcentaje=10;
+                                }else{
+                                    descuento=0;
+                                }
+                                
+                                impuesto=subtotal*0.07;
+                                total=(cobroV+impuesto)-descuento;
+
+                                System.out.println("Subtotal: "+cobroV+
+                                                   "\nISV: "+impuesto+
+                                                   "\nDescuento"+porcentaje+"%: "+descuento+
+                                                   "\nTotal: "+total);
+                                //suma para caja
+                                billete+=total;
+                            }else{
+                                System.out.println("No tienes para vender!");
+                            }
+                        }
                     }
                     else{
                         System.out.println("Ingrese letra dentro de las opciones.");

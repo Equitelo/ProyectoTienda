@@ -88,8 +88,6 @@ public class ProyectProgra {
                     System.out.print("Cliente A, B o C: ");
                     cliente=lea.next();
                     if(cliente.equalsIgnoreCase("a")){
-                        int codigoV;
-                        do{
                         System.out.println("");
                         System.out.println("Los productos para el cliente A: ");
                         System.out.println("***********************************************");
@@ -105,13 +103,7 @@ public class ProyectProgra {
                         System.out.println("***********************************************");
                         System.out.println("");
                         System.out.print("Ingresar codigo del producto: ");
-                        codigoV=lea.nextInt();
-                        
-                        if(codigoV<0||codigoV>4){
-                            System.out.println("Elige un codigo dentro del listado.");
-                        }
-                        
-                        }while(codigoV<0||codigoV>4);
+                        int codigoV=lea.nextInt();
                         // cliente A ventas
                         
                         if(codigoV==1){
@@ -250,8 +242,6 @@ public class ProyectProgra {
                             System.out.println("Escoge un codigo dentro de las opciones la proxima vez!");
                         }
                     }else if(cliente.equalsIgnoreCase("b")){
-                        int codigoV;
-                        do{
                         System.out.println("");
                         System.out.println("Los productos para el cliente B: ");
                         System.out.println("***********************************************");
@@ -265,13 +255,7 @@ public class ProyectProgra {
                         System.out.println("***********************************************");
                         System.out.println("");
                         System.out.print("Ingresar codigo del producto: ");
-                        codigoV=lea.nextInt();
-                        
-                        if(codigoV<0||codigoV>3){
-                            System.out.println("Escoge un codigo dentro del listado.");
-                        }
-                        
-                        }while(codigoV<0||codigoV>3);
+                        int codigoV=lea.nextInt();
                         // cliente B ventas
                         
                         if(codigoV==1){
@@ -377,8 +361,6 @@ public class ProyectProgra {
                             System.out.println("No");
                         }
                     }else if(cliente.equalsIgnoreCase("c")){
-                        int codigoV;
-                        do{
                         System.out.println("");
                         System.out.println("Los productos para el cliente C: ");
                         System.out.println("***********************************************");
@@ -388,13 +370,7 @@ public class ProyectProgra {
                         System.out.println("***********************************************");
                         System.out.println("");
                         System.out.print("Ingresar codigo del producto: ");
-                        codigoV=lea.nextInt();
-                        
-                        if(codigoV!=4){
-                            System.out.println("Escoge un codigo dentro del listado.");
-                        }
-                        
-                        }while(codigoV!=4);
+                        int codigoV=lea.nextInt();
                         //cliente C ventas
                         
                         if(codigoV==4){
@@ -464,7 +440,7 @@ public class ProyectProgra {
                             System.out.print("Cuantos kilogramos desea de azucar?: ");
                             int cantidadCompras=lea.nextInt();
                             
-                            cantidadKg+=cantidadCompras;
+                            //cantidadKg+=cantidadCompras;
                             
                             cobroC=cantidadCompras*azucarCompra;
                             
@@ -474,7 +450,7 @@ public class ProyectProgra {
                             System.out.print("Cuantos kilogramos desea de Maiz?: ");
                             int cantidadCompras=lea.nextInt();
                             
-                            cantidadKg+=cantidadCompras;
+                            //cantidadKg+=cantidadCompras;
                             
                             cobroC=cantidadCompras*maizCompra;
                         }else{
@@ -501,7 +477,7 @@ public class ProyectProgra {
                             System.out.println("Cuantos desea de azucar: ");
                             int cantidadCompras=lea.nextInt();
                             
-                            cantidadKg+=cantidadCompras;
+                            //cantidadKg+=cantidadCompras;
                         }else if(codigoC==3){
                             System.out.println("Que tipo de Maiz desea?");
                             System.out.print("A o B?: ");
@@ -511,12 +487,12 @@ public class ProyectProgra {
                                 System.out.println("Cuantos kilogramos de trigo quisera llevar?: ");
                                 int cantidadCompras=lea.nextInt();
                                 
-                                cantidadKg+=cantidadCompras;
+                                //cantidadKg+=cantidadCompras;
                             }else if(avenaOpcion.equalsIgnoreCase("b")){
                                 System.out.println("Cuantos kilogramos de trigo quisiera llevar?: ");
                                 int cantidadCompras=lea.nextInt();
                                 
-                                cantidadKg+=cantidadCompras;
+                                //cantidadKg+=cantidadCompras;
                             }else{
                                 System.out.println("Elija entre tipo A o B.");
                             }
@@ -548,12 +524,12 @@ public class ProyectProgra {
                                 System.out.println("Cuantos kilogramos de avena desea llevar?: ");
                                 int cantidadCompras=lea.nextInt();
                                 
-                                cantidadKg+=cantidadCompras;
+                                //cantidadKg+=cantidadCompras;
                             }else if(avenaOpcion.equalsIgnoreCase("b")){
                                 System.out.println("Cuantos kilogramos de avena desea llevar?: ");
                                 int cantidadCompras=lea.nextInt();
                                 
-                                cantidadKg+=cantidadCompras;
+                                //cantidadKg+=cantidadCompras;
                             }else{
                                 System.out.println("Elija entre tipo A o B.");
                             }

@@ -77,7 +77,7 @@ public class ProyectProgra {
                 
             }else if(opcion==2){
             
-                if((azucarKg<0||azucarKg==0)||(avenaKg<0||avenaKg==0)||(trigoKg<0||trigoKg==0)||(maizKg<0||maizKg==0)){
+                if(azucarKg<=0||avenaKg<=0||trigoKg<=0||maizKg<=0){
                     System.out.println(" ");
                     System.out.println("Uy! No tienes productos a vender");
                     System.out.println(" ");
@@ -110,23 +110,23 @@ public class ProyectProgra {
                             int cantidadVenta=lea.nextInt();
                             
                             //logica de facturacion
-                            if((azucarKg==cantidadVenta)){
+                            if((azucarKg>=cantidadVenta)){
                                 cobroV=cantidadVenta*azucarVentas;
                             
                             
-                            if(cobroV>=1000&&cobroV<=5000){
-                                descuento=cobroV*0.05;
-                                
-                            }
-                            if(cobroV>=5000){
-                                descuento=cobroV*0.10;
-                            }
-                            
-                            subtotal=cobroV-descuento;
-                            
-                            impuesto=subtotal*0.07;
-                            
-                            System.out.println("Total: "+impuesto);
+                                if(cobroV>=1000&&cobroV<=5000){
+                                    descuento=cobroV*0.05;
+
+                                }
+                                if(cobroV>=5000){
+                                    descuento=cobroV*0.10;
+                                }
+
+                                subtotal=cobroV-descuento;
+
+                                impuesto=subtotal*0.07;
+
+                                System.out.println("Total: "+impuesto);
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
@@ -134,6 +134,12 @@ public class ProyectProgra {
                         }else if(codigoV==2){
                             System.out.println("Cuantos kilogramos de azucar desea?: "); 
                             int cantidadVenta=lea.nextInt();
+                            
+                            if(avenaKg>=cantidadVenta){
+                            
+                            }else{
+                                System.out.println("No tienes para vender!");
+                            }
                             
                         }else if(codigoV==3){
                             System.out.println("Cuantos kilogramos de trigo desea?: "); 
@@ -179,7 +185,7 @@ public class ProyectProgra {
                     }
                 }
             }else if(opcion==3){
-                if(caja<18){
+                if(caja<=18){
                     System.out.println(" ");
                     System.out.println("No tienes suficiente dinero para comprar.");
                     System.out.println(" ");

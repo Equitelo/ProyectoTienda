@@ -15,15 +15,6 @@ public class LaraSamuelTienda {
         
         //dinero
         double billete=0;
-        //reportes
-        double caja=0;
-        int ingresoC=0;
-        int ingresoV=0;
-        double volumenV=0;
-        double volumenC=0;
-        double margenGana=0;
-        double promedioV=0;
-        double promedioC=0;
         
         //cantidad en kilogramos
         double azucarKg=0;
@@ -38,6 +29,7 @@ public class LaraSamuelTienda {
         int maizVentas=20;
         
         int cobroV=0;
+        //desear otro producto
         String decision="no";
         
         //Precios productos compra
@@ -56,6 +48,22 @@ public class LaraSamuelTienda {
         double subtotal=0;
         double total=0;
         
+        //reportes
+        double caja=0;
+        int ingresoC=0;
+        int ingresoV=0;
+        double volumenV=0;
+        double volumenC=0;
+        double margenGana=0;
+        double promedioV=0;
+        double promedioC=0;
+        double mayorGanancia=0;
+        double mayorPerdida=5000;
+        double dineroAzucar=0;
+        double dineroAvena=0;
+        double dineroTrigo=0;
+        double dineroMaiz=0;
+        //tipo de cliente
         String cliente;
         
         while(opcion!=6){
@@ -137,13 +145,15 @@ public class LaraSamuelTienda {
                                 
                                 impuesto=subtotal*0.07;
                                 total=(cobroV+impuesto)-descuento;
-
+                                
                                 System.out.println("Subtotal: L."+cobroV+
                                                    "\nISV: 7%"+impuesto+
                                                    "\nDescuento"+porcentaje+"%: "+descuento+
                                                    "\nTotal: L."+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>azucarKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -186,6 +196,8 @@ public class LaraSamuelTienda {
                                                    "\nTotal: L."+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>avenaKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -227,6 +239,8 @@ public class LaraSamuelTienda {
                                                    "\nTotal: L."+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>trigoKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -267,6 +281,8 @@ public class LaraSamuelTienda {
                                                    "\nTotal: L."+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>maizKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -330,6 +346,8 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>azucarKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -371,6 +389,8 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>avenaKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -412,6 +432,8 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>trigoKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -469,6 +491,8 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                ingresoV++;
+                                volumenV+=total;
                                 if(cantidadVenta>maizKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -532,7 +556,9 @@ public class LaraSamuelTienda {
                                     System.out.println("Subtotal: L."+cobroC+
                                                        "\nISV. 7%: "+impuesto+
                                                        "\nTotal: L."+total);
-                                    billete-=cobroC;  
+                                    billete-=cobroC; 
+                                    ingresoC++;
+                                    volumenC+=total;
                                 }
                             }else{
                                 System.out.println("No tienes suficiente para comprar");
@@ -555,7 +581,9 @@ public class LaraSamuelTienda {
                                     System.out.println("Subtotal: L."+cobroC+
                                                        "\nISV. 7%: "+impuesto+
                                                        "\nTotal: L."+total);
-                                    billete-=cobroC;  
+                                    billete-=cobroC;
+                                    ingresoC++;
+                                    volumenC+=total;
                                 }
                             }else{
                                 System.out.println("No tienes suficiente para comprar");
@@ -603,7 +631,9 @@ public class LaraSamuelTienda {
                                         System.out.println("Subtotal: L."+cobroC+
                                                        "\nISV. 7%: "+impuesto+
                                                        "\nTotal: L."+total);
-                                        billete-=cobroC;  
+                                        billete-=cobroC;
+                                        ingresoC++;
+                                        volumenC+=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -627,7 +657,9 @@ public class LaraSamuelTienda {
                                         System.out.println("Subtotal: L."+cobroC+
                                                        "\nISV. 7%: "+impuesto+
                                                        "\nTotal: L."+total);
-                                        billete-=cobroC;  
+                                        billete-=cobroC;
+                                        ingresoC++;
+                                        volumenC+=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -656,7 +688,9 @@ public class LaraSamuelTienda {
                                     System.out.println("Subtotal: L."+cobroC+
                                                        "\nISV. 7%: "+impuesto+
                                                        "\nTotal: L."+total);
-                                    billete-=cobroC;  
+                                    billete-=cobroC;
+                                    ingresoC++;
+                                    volumenC+=total;
                                 }
                             }else{
                                 System.out.println("No tienes suficiente para comprar");
@@ -702,7 +736,9 @@ public class LaraSamuelTienda {
                                         System.out.println("Subtotal: L."+cobroC+
                                                        "\nISV. 7%: "+impuesto+
                                                        "\nTotal: L."+total);
-                                        billete-=cobroC;  
+                                        billete-=cobroC;
+                                        ingresoC++;
+                                        volumenC+=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -717,16 +753,17 @@ public class LaraSamuelTienda {
                                 //factura
                                     impuesto=cobroC*0.07;
                                     total=cobroC+impuesto;
-
-                                    System.out.println("Subtotal: L."+cobroC+
-                                                       "\nISV. 7%: "+impuesto+
-                                                       "\nTotal: L."+total);
                                     //ganancias y perdidas
                                     avenaKg+=cantidadCompras;
                                     if(total>billete){
                                         System.out.println("No se puede realizar la compra sin suficiente dinero"); 
                                     }else{
-                                        billete-=cobroC;  
+                                        System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
+                                        ingresoC++;
+                                        billete-=cobroC;
+                                        volumenC+=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -745,11 +782,32 @@ public class LaraSamuelTienda {
                 }
             }else if(opcion==4){
                 System.out.println("");
-                System.out.println("REPORTES");
+                System.out.println("***********************REPORTES*******************************");
+                //a
                 System.out.println("La cantidad actual en caja es de: L."+billete);
+                //b
+                System.out.println("Numero de Compras realizadas en el día."+ingresoC+
+                                   "\nNumero de Ventas realizadas en el día."+ingresoV);
+                //c
+                margenGana=(volumenC/volumenV)*100;
+                System.out.println("Volumen total de Compras efectuadas antes del cierre."+volumenC+
+                                   "\nVolumen total de Ventas efectuadas antes del cierre."+volumenV+
+                                   "\nEl margen de ganancia: "+margenGana);
+                //d
+                promedioV=(volumenV/ingresoV)*100;
+                promedioC=(volumenC/ingresoC)*100;
+                System.out.println("Valor Medio de Compra: "+promedioV+
+                                   "% \nValor Medio de Venta. "+promedioC+"% ");
+                //e
+                System.out.println("La venta con mayor ganancia realizada: "+
+                                   "La compra con más gasto efectuada: ");
+                //f
+                System.out.println("Producto Estrella: ");
+                //g
+                System.out.println("Ranking: ");
                 System.out.println("");
             }else if(opcion==5){
-            
+                
             }else{
                 System.out.println("Ya estuvo!");
             }

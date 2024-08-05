@@ -19,6 +19,11 @@ public class LaraSamuelTienda {
         double caja=0;
         int ingresoC=0;
         int ingresoV=0;
+        double volumenV=0;
+        double volumenC=0;
+        double margenGana=0;
+        double promedioV=0;
+        double promedioC=0;
         
         //cantidad en kilogramos
         double azucarKg=0;
@@ -33,6 +38,7 @@ public class LaraSamuelTienda {
         int maizVentas=20;
         
         int cobroV=0;
+        String decision="no";
         
         //Precios productos compra
         int azucarCompra=25;
@@ -104,10 +110,10 @@ public class LaraSamuelTienda {
                         System.out.println("*   4    *      Maiz        *       L.20      *");
                         System.out.println("***********************************************");
                         System.out.println("");
+                        do{
                         System.out.print("Ingresar codigo del producto: ");
                         int codigoV=lea.nextInt();
                         // cliente A ventas
-                        
                         if(codigoV==1){
                             //azucar ventas
                             System.out.print("Cuantos kilogramos de azucar desea?: "); 
@@ -144,8 +150,12 @@ public class LaraSamuelTienda {
                                     azucarKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
+                            
                         
                         }else if(codigoV==2){
                             //avena ventas
@@ -182,7 +192,10 @@ public class LaraSamuelTienda {
                                     avenaKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
                             
                         }else if(codigoV==3){
@@ -220,7 +233,10 @@ public class LaraSamuelTienda {
                                     trigoKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
                             
                         }else if(codigoV==4){
@@ -257,12 +273,15 @@ public class LaraSamuelTienda {
                                     maizKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
-                            
                         }else{
                             System.out.println("Escoge un codigo dentro de las opciones la proxima vez!");
                         }
+                        }while(decision.equals("si")); 
                     }else if(cliente.equalsIgnoreCase("b")){
                         System.out.println("");
                         System.out.println("Los productos para el cliente B: ");
@@ -276,6 +295,7 @@ public class LaraSamuelTienda {
                         System.out.println("*   3    *      Trigo       *       L.32      *");
                         System.out.println("***********************************************");
                         System.out.println("");
+                        do{
                         System.out.print("Ingresar codigo del producto: ");
                         int codigoV=lea.nextInt();
                         // cliente B ventas
@@ -316,7 +336,10 @@ public class LaraSamuelTienda {
                                     azucarKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
                         
                         }else if(codigoV==2){
@@ -354,7 +377,10 @@ public class LaraSamuelTienda {
                                     avenaKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
                             
                         }else if(codigoV==3){
@@ -392,11 +418,15 @@ public class LaraSamuelTienda {
                                     trigoKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
                         }else{
                             System.out.println("No");
                         }
+                        }while(decision.equals("si"));
                     }else if(cliente.equalsIgnoreCase("c")){
                         System.out.println("");
                         System.out.println("Los productos para el cliente C: ");
@@ -406,6 +436,7 @@ public class LaraSamuelTienda {
                         System.out.println("*   4    *      Maiz        *       L.20      *");
                         System.out.println("***********************************************");
                         System.out.println("");
+                        do{
                         System.out.print("Ingresar codigo del producto: ");
                         int codigoV=lea.nextInt();
                         //cliente C ventas
@@ -444,9 +475,13 @@ public class LaraSamuelTienda {
                                     maizKg-=cantidadVenta;
                                 }
                             }else{
-                                System.out.println("No tienes para vender!");
+                                System.out.println("");
+                                System.out.println("No cuentas con lo suficiente!");
+                                System.out.print("Deseas comprar otro producto? (SI/NO): ");
+                                decision=lea.next().toLowerCase();
                             }
                         }
+                        }while(decision.equals("si"));
                     }
                     else{
                         System.out.println("Ingrese letra dentro de las opciones.");

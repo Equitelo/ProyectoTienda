@@ -15,7 +15,10 @@ public class LaraSamuelTienda {
         
         //dinero
         double billete=0;
+        //reportes
         double caja=0;
+        int ingresoC=0;
+        int ingresoV=0;
         
         //cantidad en kilogramos
         double azucarKg=0;
@@ -33,8 +36,8 @@ public class LaraSamuelTienda {
         
         //Precios productos compra
         int azucarCompra=25;
-        int avenaCompraA=20;
-        int avenaCompraB=22;
+        int avenacompraA=20;
+        int avenacompraB=22;
         int trigoCompra=30;
         int maizCompra=18;
         
@@ -107,7 +110,7 @@ public class LaraSamuelTienda {
                         
                         if(codigoV==1){
                             //azucar ventas
-                            System.out.println("Cuantos kilogramos de azucar desea?: "); 
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             
                             //logica de facturacion
@@ -146,12 +149,12 @@ public class LaraSamuelTienda {
                         
                         }else if(codigoV==2){
                             //avena ventas
-                            System.out.println("Cuantos kilogramos de avena desea?: "); 
+                            System.out.print("Cuantos kilogramos de avena desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             //facturizacion
                             if(avenaKg>=cantidadVenta){
                             
-                                cobroV=cantidadVenta*azucarVentas;
+                                cobroV=cantidadVenta*avenaVentas;
                             
                                 if(cobroV>=1000&&cobroV<=5000){
                                     descuento=cobroV*0.05;
@@ -173,18 +176,23 @@ public class LaraSamuelTienda {
                                                    "\nTotal: L."+total);
                                 //suma para caja
                                 billete+=total;
+                                if(cantidadVenta>avenaKg){
+                                    System.out.println("No tienes esa cantidad a vender");
+                                }else{
+                                    avenaKg-=cantidadVenta;
+                                }
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
                             
                         }else if(codigoV==3){
                             //trigo ventas
-                            System.out.println("Cuantos kilogramos de trigo desea?: "); 
+                            System.out.print("Cuantos kilogramos de trigo desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             //facturizacion
                             if(trigoKg>=cantidadVenta){
                                 
-                                cobroV=cantidadVenta*azucarVentas;
+                                cobroV=cantidadVenta*trigoVentas;
                             
                                 if(cobroV>=1000&&cobroV<=5000){
                                     descuento=cobroV*0.05;
@@ -206,17 +214,22 @@ public class LaraSamuelTienda {
                                                    "\nTotal: L."+total);
                                 //suma para caja
                                 billete+=total;
+                                if(cantidadVenta>trigoKg){
+                                    System.out.println("No tienes esa cantidad a vender");
+                                }else{
+                                    trigoKg-=cantidadVenta;
+                                }
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
                             
                         }else if(codigoV==4){
                             //maiz ventas
-                            System.out.println("Cuantos kilogramos de maiz desea?: "); 
+                            System.out.print("Cuantos kilogramos de maiz desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             
                             if(maizKg>=cantidadVenta){
-                                cobroV=cantidadVenta*azucarVentas;
+                                cobroV=cantidadVenta*maizVentas;
                             
                                 if(cobroV>=1000&&cobroV<=5000){
                                     descuento=cobroV*0.05;
@@ -238,6 +251,11 @@ public class LaraSamuelTienda {
                                                    "\nTotal: L."+total);
                                 //suma para caja
                                 billete+=total;
+                                if(cantidadVenta>maizKg){
+                                    System.out.println("No tienes esa cantidad a vender");
+                                }else{
+                                    maizKg-=cantidadVenta;
+                                }
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
@@ -264,7 +282,7 @@ public class LaraSamuelTienda {
                         
                         if(codigoV==1){
                             //azucar ventas
-                            System.out.println("Cuantos kilogramos de azucar desea?: "); 
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             
                             //logica de facturacion
@@ -292,18 +310,23 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                if(cantidadVenta>azucarKg){
+                                    System.out.println("No tienes esa cantidad a vender");
+                                }else{
+                                    azucarKg-=cantidadVenta;
+                                }
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
                         
                         }else if(codigoV==2){
                             //avena ventas
-                            System.out.println("Cuantos kilogramos de avena desea?: "); 
+                            System.out.print("Cuantos kilogramos de avena desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             //facturizacion
                             if(avenaKg>=cantidadVenta){
                             
-                                cobroV=cantidadVenta*azucarVentas;
+                                cobroV=cantidadVenta*avenaVentas;
                             
                                 if(cobroV>=1000&&cobroV<=5000){
                                     descuento=cobroV*0.05;
@@ -325,18 +348,23 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                if(cantidadVenta>avenaKg){
+                                    System.out.println("No tienes esa cantidad a vender");
+                                }else{
+                                    avenaKg-=cantidadVenta;
+                                }
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
                             
                         }else if(codigoV==3){
                             //trigo ventas
-                            System.out.println("Cuantos kilogramos de trigo desea?: "); 
+                            System.out.print("Cuantos kilogramos de trigo desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             //facturizacion
                             if(trigoKg>=cantidadVenta){
                                 
-                                cobroV=cantidadVenta*azucarVentas;
+                                cobroV=cantidadVenta*trigoVentas;
                             
                                 if(cobroV>=1000&&cobroV<=5000){
                                     descuento=cobroV*0.05;
@@ -358,6 +386,11 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                if(cantidadVenta>trigoKg){
+                                    System.out.println("No tienes esa cantidad a vender");
+                                }else{
+                                    trigoKg-=cantidadVenta;
+                                }
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
@@ -379,11 +412,11 @@ public class LaraSamuelTienda {
                         
                         if(codigoV==4){
                             //maiz ventas
-                            System.out.println("Cuantos kilogramos de maiz desea?: "); 
+                            System.out.print("Cuantos kilogramos de maiz desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             
                             if(maizKg>=cantidadVenta){
-                                cobroV=cantidadVenta*azucarVentas;
+                                cobroV=cantidadVenta*maizVentas;
                             
                                 if(cobroV>=1000&&cobroV<=5000){
                                     descuento=cobroV*0.05;
@@ -405,6 +438,11 @@ public class LaraSamuelTienda {
                                                    "\nTotal: "+total);
                                 //suma para caja
                                 billete+=total;
+                                if(cantidadVenta>maizKg){
+                                    System.out.println("No tienes esa cantidad a vender");
+                                }else{
+                                    maizKg-=cantidadVenta;
+                                }
                             }else{
                                 System.out.println("No tienes para vender!");
                             }
@@ -451,14 +489,14 @@ public class LaraSamuelTienda {
                                 impuesto=cobroC*0.07;
                                 total=cobroC+impuesto;
                                 
-                                System.out.println("Subtotal: L."+cobroC+
-                                                   "\nISV. 7%: "+impuesto+
-                                                   "\nTotal: L."+total);
                                 //ganancias y perdidas
                                 azucarKg+=cantidadCompras;
                                 if(total>billete){
                                     System.out.println("No se puede realizar la compra sin suficiente dinero"); 
                                 }else{
+                                    System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
                                     billete-=cobroC;  
                                 }
                             }else{
@@ -467,10 +505,26 @@ public class LaraSamuelTienda {
                         }else if(codigoC==4){
                             System.out.print("Cuantos kilogramos desea de Maiz?: ");
                             int cantidadCompras=lea.nextInt();
-                            
-                            //cantidadKg+=cantidadCompras;
-                            
                             cobroC=cantidadCompras*maizCompra;
+                            //cantidadKg+=cantidadCompras;
+                            if(billete>=cobroC){
+                                //factura
+                                impuesto=cobroC*0.07;
+                                total=cobroC+impuesto;
+                                
+                                //ganancias y perdidas
+                                maizKg+=cantidadCompras;
+                                if(total>billete){
+                                    System.out.println("No se puede realizar la compra sin suficiente dinero"); 
+                                }else{
+                                    System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
+                                    billete-=cobroC;  
+                                }
+                            }else{
+                                System.out.println("No tienes suficiente para comprar");
+                            }
                         }else{
                             System.out.println("No cuento con dicho producto.");
                             
@@ -492,29 +546,86 @@ public class LaraSamuelTienda {
                         //clientes B compras 
                         
                         if(codigoC==2){
-                            System.out.println("Cuantos desea de azucar: ");
-                            int cantidadCompras=lea.nextInt();
-                            
-                            //cantidadKg+=cantidadCompras;
-                        }else if(codigoC==3){
-                            System.out.println("Que tipo de Maiz desea?");
+                            System.out.println("Que tipo de Avena desea?");
                             System.out.print("A o B?: ");
                             String avenaOpcion=lea.next();
                             
                             if(avenaOpcion.equalsIgnoreCase("a")){
-                                System.out.println("Cuantos kilogramos de trigo quisera llevar?: ");
+                                System.out.print("Cuantos kilogramos de trigo quisera llevar?: ");
                                 int cantidadCompras=lea.nextInt();
+                                cobroC=cantidadCompras*avenacompraA;
                                 
-                                //cantidadKg+=cantidadCompras;
+                                if(billete>=cobroC){
+                                //factura
+                                    impuesto=cobroC*0.07;
+                                    total=cobroC+impuesto;
+
+                                    //ganancias y perdidas
+                                    avenaKg+=cantidadCompras;
+                                    if(total>billete){
+                                        System.out.println("No se puede realizar la compra sin suficiente dinero"); 
+                                    }else{
+                                        System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
+                                        billete-=cobroC;  
+                                    }
+                                }else{
+                                    System.out.println("No tienes suficiente para comprar");
+                                }
+                                
                             }else if(avenaOpcion.equalsIgnoreCase("b")){
-                                System.out.println("Cuantos kilogramos de trigo quisiera llevar?: ");
+                                System.out.print("Cuantos kilogramos de trigo quisiera llevar?: ");
                                 int cantidadCompras=lea.nextInt();
+                                cobroC=cantidadCompras*avenacompraB;
                                 
-                                //cantidadKg+=cantidadCompras;
+                                if(billete>=cobroC){
+                                //factura
+                                    impuesto=cobroC*0.07;
+                                    total=cobroC+impuesto;
+
+                                    //ganancias y perdidas
+                                    avenaKg+=cantidadCompras;
+                                    if(total>billete){
+                                        System.out.println("No se puede realizar la compra sin suficiente dinero"); 
+                                    }else{
+                                        System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
+                                        billete-=cobroC;  
+                                    }
+                                }else{
+                                    System.out.println("No tienes suficiente para comprar");
+                                }
+                                
                             }else{
                                 System.out.println("Elija entre tipo A o B.");
                             }
-                           
+                            
+                            //cantidadKg+=cantidadCompras;
+                        }else if(codigoC==3){
+                            System.out.print("Cuantos kilogramos desea de trigo?: ");
+                            int cantidadCompras=lea.nextInt();
+                            cobroC=cantidadCompras*trigoCompra;
+                            //cantidadKg+=cantidadCompras;
+                            if(billete>=cobroC){
+                                //factura
+                                impuesto=cobroC*0.07;
+                                total=cobroC+impuesto;
+                                
+                                //ganancias y perdidas
+                                trigoKg+=cantidadCompras;
+                                if(total>billete){
+                                    System.out.println("No se puede realizar la compra sin suficiente dinero"); 
+                                }else{
+                                    System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
+                                    billete-=cobroC;  
+                                }
+                            }else{
+                                System.out.println("No tienes suficiente para comprar");
+                            }
                         }else{
                             System.out.println("No cuento con dicho producto.");
                         }
@@ -528,26 +639,63 @@ public class LaraSamuelTienda {
                         System.out.println("*   2    *      Avena       *                 *");
                         System.out.println("*        *                  *    B:   L.22    *");
                         System.out.println("***********************************************");
-                        System.out.println("Ingresar codigo del producto: ");
+                        System.out.print("Ingresar codigo del producto: ");
                         int codigoC=lea.nextInt();
                         
                         // cliente C compras
                         
-                        if(codigoC==3){
+                        if(codigoC==2){
                             System.out.println("Que tipo de Avena desea?");
                             System.out.print("A o B?: ");
                             String avenaOpcion=lea.next();
                             
                             if(avenaOpcion.equalsIgnoreCase("a")){
-                                System.out.println("Cuantos kilogramos de avena desea llevar?: ");
+                                System.out.print("Cuantos kilogramos de avena desea llevar?: ");
                                 int cantidadCompras=lea.nextInt();
-                                
+                                cobroC=cantidadCompras*avenacompraA;
+                                if(billete>=cobroC){
+                                    
+                                    //factura
+                                    impuesto=cobroC*0.07;
+                                    total=cobroC+impuesto;
+                                    
+                                    //ganancias y perdidas
+                                    avenaKg+=cantidadCompras;
+                                    if(total>billete){
+                                        System.out.println("No se puede realizar la compra sin suficiente dinero"); 
+                                    }else{
+                                        System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
+                                        billete-=cobroC;  
+                                    }
+                                }else{
+                                    System.out.println("No tienes suficiente para comprar");
+                                }
                                 //cantidadKg+=cantidadCompras;
                             }else if(avenaOpcion.equalsIgnoreCase("b")){
-                                System.out.println("Cuantos kilogramos de avena desea llevar?: ");
+                                System.out.print("Cuantos kilogramos de avena desea llevar?: ");
                                 int cantidadCompras=lea.nextInt();
-                                
+                                cobroC=cantidadCompras*avenacompraB;
                                 //cantidadKg+=cantidadCompras;
+                                if(billete>=cobroC){
+                                //factura
+                                    impuesto=cobroC*0.07;
+                                    total=cobroC+impuesto;
+
+                                    System.out.println("Subtotal: L."+cobroC+
+                                                       "\nISV. 7%: "+impuesto+
+                                                       "\nTotal: L."+total);
+                                    //ganancias y perdidas
+                                    avenaKg+=cantidadCompras;
+                                    if(total>billete){
+                                        System.out.println("No se puede realizar la compra sin suficiente dinero"); 
+                                    }else{
+                                        billete-=cobroC;  
+                                    }
+                                }else{
+                                    System.out.println("No tienes suficiente para comprar");
+                                }
                             }else{
                                 System.out.println("Elija entre tipo A o B.");
                             }

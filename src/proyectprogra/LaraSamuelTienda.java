@@ -15,6 +15,8 @@ public class LaraSamuelTienda {
         
         //dinero
         double billete=0;
+        double banco=0;
+        double ingresar=0;
         
         //cantidad en kilogramos
         double azucarKg=0;
@@ -49,20 +51,26 @@ public class LaraSamuelTienda {
         double total=0;
         
         //reportes
-        double caja=0;
-        int ingresoC=0;
-        int ingresoV=0;
-        double volumenV=0;
-        double volumenC=0;
-        double margenGana=0;
-        double promedioV=0;
-        double promedioC=0;
-        double mayorGanancia=0;
-        double mayorPerdida=5000;
-        double dineroAzucar=0;
-        double dineroAvena=0;
-        double dineroTrigo=0;
-        double dineroMaiz=0;
+            //a
+            double caja=0;
+            //b
+            int ingresoC=0;
+            int ingresoV=0;
+            //c
+            double volumenV=0;
+            double volumenC=0;
+            double margenGana=0;
+            //d
+            double promedioV=0;
+            double promedioC=0;
+            //e
+            double mayorGanancia=0;
+            double mayorPerdida=10000;
+            //f
+            double dineroAzucar=0;
+            double dineroAvena=0;
+            double dineroTrigo=0;
+            double dineroMaiz=0;
         //tipo de cliente
         String cliente;
         
@@ -70,15 +78,21 @@ public class LaraSamuelTienda {
         do{
             System.out.println(" ");
             System.out.println("""
-                               *** MENU ***
-                               1 - Abrir Caja
-                               2 - Ventas
-                               3 - Compras
-                               4 - Reportes
-                               5 - Cierre de Caja
-                               6 - Salir del Sistema
+                               ***********MENU**********
+                               * 1 *    Abrir Caja     *
+                               *************************
+                               * 2 *      Ventas       *
+                               *************************
+                               * 3 *      Compras      *
+                               *************************
+                               * 4 *     Reportes      *
+                               *************************
+                               * 5 *  Cierre de Caja   *
+                               *************************
+                               * 6 * Salir del Sistema *
+                               *************************
                                """);
-            System.out.print("Que desea realizar?: ");
+            System.out.print("Digite opcion a realizar: ");
             opcion=lea.nextInt();
         
             if(opcion<1||opcion>6){
@@ -154,6 +168,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroAzucar+=total;
                                 if(cantidadVenta>azucarKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -198,6 +213,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroAvena+=total;
                                 if(cantidadVenta>avenaKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -241,6 +257,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroTrigo+=total;
                                 if(cantidadVenta>trigoKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -283,6 +300,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroMaiz+=total;
                                 if(cantidadVenta>maizKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -348,6 +366,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroAzucar+=total;
                                 if(cantidadVenta>azucarKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -391,6 +410,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroAvena+=total;
                                 if(cantidadVenta>avenaKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -434,6 +454,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroTrigo+=total;
                                 if(cantidadVenta>trigoKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -493,6 +514,7 @@ public class LaraSamuelTienda {
                                 billete+=total;
                                 ingresoV++;
                                 volumenV+=total;
+                                dineroMaiz+=total;
                                 if(cantidadVenta>maizKg){
                                     System.out.println("No tienes esa cantidad a vender");
                                 }else{
@@ -506,6 +528,9 @@ public class LaraSamuelTienda {
                             }
                         }
                         }while(decision.equals("si"));
+                        while(mayorGanancia<total){
+                            mayorGanancia=total;
+                        }
                     }
                     else{
                         System.out.println("Ingrese letra dentro de las opciones.");
@@ -559,6 +584,7 @@ public class LaraSamuelTienda {
                                     billete-=cobroC; 
                                     ingresoC++;
                                     volumenC+=total;
+                                    dineroAzucar-=total;
                                 }
                             }else{
                                 System.out.println("No tienes suficiente para comprar");
@@ -584,6 +610,7 @@ public class LaraSamuelTienda {
                                     billete-=cobroC;
                                     ingresoC++;
                                     volumenC+=total;
+                                    dineroMaiz-=total;
                                 }
                             }else{
                                 System.out.println("No tienes suficiente para comprar");
@@ -634,6 +661,7 @@ public class LaraSamuelTienda {
                                         billete-=cobroC;
                                         ingresoC++;
                                         volumenC+=total;
+                                        dineroAvena-=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -660,6 +688,7 @@ public class LaraSamuelTienda {
                                         billete-=cobroC;
                                         ingresoC++;
                                         volumenC+=total;
+                                        dineroAvena-=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -691,6 +720,7 @@ public class LaraSamuelTienda {
                                     billete-=cobroC;
                                     ingresoC++;
                                     volumenC+=total;
+                                    dineroTrigo-=total;
                                 }
                             }else{
                                 System.out.println("No tienes suficiente para comprar");
@@ -739,6 +769,7 @@ public class LaraSamuelTienda {
                                         billete-=cobroC;
                                         ingresoC++;
                                         volumenC+=total;
+                                        dineroAvena-=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -764,6 +795,7 @@ public class LaraSamuelTienda {
                                         ingresoC++;
                                         billete-=cobroC;
                                         volumenC+=total;
+                                        dineroAvena-=total;
                                     }
                                 }else{
                                     System.out.println("No tienes suficiente para comprar");
@@ -775,7 +807,9 @@ public class LaraSamuelTienda {
                         }else{
                             System.out.println("No cuento con dicho producto.");
                         }
-                        
+                    while(mayorPerdida>total){
+                        mayorPerdida=total;
+                    }   
                     }else{
                         System.out.println("Ingrese letra dentro de las opciones.");
                     }
@@ -786,28 +820,61 @@ public class LaraSamuelTienda {
                 //a
                 System.out.println("La cantidad actual en caja es de: L."+billete);
                 //b
-                System.out.println("Numero de Compras realizadas en el día."+ingresoC+
-                                   "\nNumero de Ventas realizadas en el día."+ingresoV);
+                System.out.println("Numero de Compras realizadas en el dia: "+ingresoC+
+                                   "\nNumero de Ventas realizadas en el dia: "+ingresoV);
                 //c
                 margenGana=(volumenC/volumenV)*100;
-                System.out.println("Volumen total de Compras efectuadas antes del cierre."+volumenC+
-                                   "\nVolumen total de Ventas efectuadas antes del cierre."+volumenV+
+                System.out.println("Volumen total de Compras efectuadas antes del cierre: "+volumenC+
+                                   "\nVolumen total de Ventas efectuadas antes del cierre: "+volumenV+
                                    "\nEl margen de ganancia: "+margenGana);
                 //d
-                promedioV=(volumenV/ingresoV)*100;
-                promedioC=(volumenC/ingresoC)*100;
+                promedioV=(volumenV/ingresoV);
+                promedioC=(volumenC/ingresoC);
                 System.out.println("Valor Medio de Compra: "+promedioV+
                                    "% \nValor Medio de Venta. "+promedioC+"% ");
                 //e
-                System.out.println("La venta con mayor ganancia realizada: "+
-                                   "La compra con más gasto efectuada: ");
+                System.out.println("La venta con mayor ganancia realizada: "+mayorGanancia+
+                                   "\nLa compra con mas gasto efectuada: "+mayorPerdida);
                 //f
-                System.out.println("Producto Estrella: ");
+                if(dineroAzucar>dineroAvena&&dineroAzucar>dineroTrigo&&dineroAzucar>dineroMaiz){
+                    System.out.println("Producto estrella: Azucar con "+azucarKg+"(kg)");    
+                }else if(dineroAvena>dineroAzucar&&dineroAvena>dineroTrigo&&dineroAvena>dineroMaiz){
+                    System.out.println("Producto estrella: Avena con "+avenaKg+"(kg)");
+                }else if(dineroTrigo>dineroAzucar&&dineroTrigo>dineroAvena&&dineroTrigo>dineroMaiz){
+                    System.out.println("Producto estrella: Trigo con "+trigoKg+"(kg)");
+                }else if(dineroMaiz>dineroAzucar&&dineroMaiz>dineroAvena&&dineroMaiz>dineroTrigo){
+                    System.out.println("Producto estrella: Maiz con "+maizKg+"(kg)");
+                }else{
+                    System.out.println("No hay producto estrella");
+                }
                 //g
                 System.out.println("Ranking: ");
                 System.out.println("");
             }else if(opcion==5){
+                //ganancia total variable
+                double gananciaT=0;
+                //formula para sacar dicha ganancia
+                gananciaT=volumenV-volumenC;
+                //evitar que de negativo
+                if(gananciaT<0){
+                    gananciaT=0;
+                }
+                //salida de pantalla
+                System.out.println("CIERRE DE CAJA");
+                System.out.println("Ganancia total: "+gananciaT);
+                System.out.println("");
+                System.out.print("Ingresar cantidad de dinero al banco: L.");
+                double guardar=lea.nextInt();
                 
+                //formula para ingresar el 60 porciento del dinero
+                ingresar=billete*0.6;
+                
+                if(guardar<=billete&&guardar<=ingresar){
+                    billete-=guardar;
+                    banco+=guardar;
+                }else{
+                    System.out.println("Solo se permite guardar el 60% en el banco");
+                }
             }else{
                 System.out.println("Ya estuvo!");
             }

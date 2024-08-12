@@ -963,6 +963,68 @@ public class LaraSamuelTienda {
                 }else{
                     System.out.println("Solo se permite guardar el 60% en el banco");
                 }
+        
+        billete=0;
+        banco=0;
+        ingresar=0;
+        
+        //cantidad en kilogramos
+        azucarKg=0;
+        avenaKg=0;
+        trigoKg=0;
+        maizKg=0;
+        
+        azucarSell=0;
+        avenaSell=0;
+        trigoSell=0;
+        maizSell=0; 
+        //Precios productos venta
+        
+        cobroV=0;
+        
+        //Precios productos compra
+        azucarCompra=25;
+        avenacompraA=20;
+        avenacompraB=22;
+        trigoCompra=30;
+        maizCompra=18;
+        
+        cobroC=0;
+        
+        //Para facturas
+        porcentaje=0;
+        descuento=0;
+        impuesto=0;
+        subtotal=0;
+        total=0;
+        
+        //reportes
+            //a
+            caja=0;
+            //b
+            ingresoC=0;
+            ingresoV=0;
+            //c
+            volumenV=0;
+            volumenC=0;
+            margenGana=0;
+            //d
+            promedioV=0;
+            promedioC=0;
+            //e
+            mayorV=0;
+            mayorC=0;
+            //f
+            starProduct="";
+            dineroAzucar=0;
+            dineroAvena=0;
+            dineroTrigo=0;
+            dineroMaiz=0;
+            //g
+            primerLugar = 0;
+            segundoLugar = 0;
+            tercerLugar = 0;
+            cuartoLugar = 0;
             }else{
                 System.out.println("Ya estuvo!");
             }

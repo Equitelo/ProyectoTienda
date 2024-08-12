@@ -15,7 +15,12 @@ public class LaraSamuelTienda {
         double banco=0;
         double ingresar=0;
         int oportunidadDiaria=1;
-        
+        //venta
+        int codigoV=0;
+        int cantidadVenta=0;
+        //compra
+        int codigoC=0;
+        int cantidadCompras=0;
         //cantidad en kilogramos
         double azucarKg=0;
         double avenaKg=0;
@@ -79,6 +84,9 @@ public class LaraSamuelTienda {
             double segundoLugar = Integer.MIN_VALUE;
             double tercerLugar = Integer.MIN_VALUE;
             double cuartoLugar = Integer.MIN_VALUE;
+        //Cierre de caja
+        double gananciaT=0;
+        double guardar=0;
         //tipo de cliente
         String cliente;
         
@@ -165,14 +173,23 @@ public class LaraSamuelTienda {
                         System.out.println("************************************************************");
                         System.out.println("");
                         do{
+                        try{
                         System.out.print("Ingresar codigo del producto: ");
-                        int codigoV=lea.nextInt();
+                        codigoV=lea.nextInt();
+                        }catch(InputMismatchException e){
+                            System.out.println("No debe ingresar letras");
+                            lea.nextLine();
+                        }
                         // cliente A ventas
                         if(codigoV==1){
                             //azucar ventas
-                            
+                            try{
                             System.out.print("Cuantos kilogramos de azucar desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             //logica de facturacion
                             if((azucarKg>=cantidadVenta)){
                                 
@@ -217,8 +234,13 @@ public class LaraSamuelTienda {
                             }
                         }else if(codigoV==2){
                             //avena ventas
-                            System.out.print("Cuantos kilogramos de avena desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             //facturizacion
                             if(avenaKg>=cantidadVenta){
                             
@@ -264,8 +286,13 @@ public class LaraSamuelTienda {
                             
                         }else if(codigoV==3){
                             //trigo ventas
-                            System.out.print("Cuantos kilogramos de trigo desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             //facturizacion
                             if(trigoKg>=cantidadVenta){
                                 
@@ -308,8 +335,13 @@ public class LaraSamuelTienda {
                             
                         }else if(codigoV==4){
                             //maiz ventas
-                            System.out.print("Cuantos kilogramos de maiz desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             if(maizKg>=cantidadVenta){
                                 cobroV=cantidadVenta*maizVentas;
                             
@@ -370,14 +402,24 @@ public class LaraSamuelTienda {
                         System.out.println("************************************************************");
                         System.out.println("");
                         do{
+                        try{
                         System.out.print("Ingresar codigo del producto: ");
-                        int codigoV=lea.nextInt();
+                        codigoV=lea.nextInt();
+                        }catch(InputMismatchException e){
+                            System.out.println("No debe ingresar letras");
+                            lea.nextLine();
+                        }
                         // cliente B ventas
                         
                         if(codigoV==1){
                             //azucar ventas
+                            try{
                             System.out.print("Cuantos kilogramos de azucar desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             //logica de facturacion
                             if((azucarKg>=cantidadVenta)){
                                 
@@ -423,8 +465,13 @@ public class LaraSamuelTienda {
                         
                         }else if(codigoV==2){
                             //avena ventas
-                            System.out.print("Cuantos kilogramos de avena desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             //facturizacion
                             if(avenaKg>=cantidadVenta){
                             
@@ -470,8 +517,13 @@ public class LaraSamuelTienda {
                             
                         }else if(codigoV==3){
                             //trigo ventas
-                            System.out.print("Cuantos kilogramos de trigo desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             //facturizacion
                             if(trigoKg>=cantidadVenta){
                                 
@@ -531,12 +583,22 @@ public class LaraSamuelTienda {
                         System.out.println("************************************************************");
                         System.out.println("");
                         do{
+                        try{
                         System.out.print("Ingresar codigo del producto: ");
-                        int codigoV=lea.nextInt();
+                        codigoV=lea.nextInt();
+                        }catch(InputMismatchException e){
+                            System.out.println("No debe ingresar letras");
+                            lea.nextLine();
+                        }
                         if(codigoV==4){
                             //maiz ventas
-                            System.out.print("Cuantos kilogramos de maiz desea?: "); 
-                            int cantidadVenta=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos de azucar desea?: "); 
+                            cantidadVenta=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras.");
+                                lea.nextLine();
+                            }
                             
                             if(maizKg>=cantidadVenta){
                                 cobroV=cantidadVenta*maizVentas;
@@ -608,14 +670,24 @@ public class LaraSamuelTienda {
                         System.out.println("*   4    *       Maiz       *       L.18      *     "+maizKg+"    *");
                         System.out.println("************************************************************");
                         System.out.println("");
+                        try{
                         System.out.print("Ingresar codigo del producto: ");
-                        int codigoC=lea.nextInt();
+                        codigoC=lea.nextInt();
+                        }catch(InputMismatchException e){
+                            System.out.println("No debe ingresar letras");
+                            lea.nextLine();
+                        }
                         
                         //cliente A compras
                         
                         if(codigoC==1){
+                            try{
                             System.out.print("Cuantos kilogramos desea de azucar?: ");
-                            int cantidadCompras=lea.nextInt();
+                            cantidadCompras=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras");
+                                lea.nextLine();
+                            }
                             //cobro 
                             cobroC=cantidadCompras*azucarCompra;
                             
@@ -643,8 +715,13 @@ public class LaraSamuelTienda {
                                 System.out.println("Tu dinero es de: "+billete);
                             }
                         }else if(codigoC==4){
-                            System.out.print("Cuantos kilogramos desea de Maiz?: ");
-                            int cantidadCompras=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos desea de azucar?: ");
+                            cantidadCompras=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras");
+                                lea.nextLine();
+                            }
                             cobroC=cantidadCompras*maizCompra;
                             //cantidadKg+=cantidadCompras;
                             if(billete>=cobroC){
@@ -685,8 +762,13 @@ public class LaraSamuelTienda {
                         System.out.println("************************************************************");
                         System.out.println("*   3    *      Trigo       *       L.30      *     "+trigoKg+"    *");
                         System.out.println("************************************************************");
-                        System.out.println("Ingresar codigo del producto: ");
-                        int codigoC=lea.nextInt();
+                        try{
+                        System.out.print("Ingresar codigo del producto: ");
+                        codigoC=lea.nextInt();
+                        }catch(InputMismatchException e){
+                            System.out.println("No debe ingresar letras");
+                            lea.nextLine();
+                        }
                         
                         //clientes B compras 
                         
@@ -696,8 +778,13 @@ public class LaraSamuelTienda {
                             String avenaOpcion=lea.next();
                             
                             if(avenaOpcion.equalsIgnoreCase("a")){
-                                System.out.print("Cuantos kilogramos de trigo quisera llevar?: ");
-                                int cantidadCompras=lea.nextInt();
+                                try{
+                                System.out.print("Cuantos kilogramos desea de azucar?: ");
+                                cantidadCompras=lea.nextInt();
+                                }catch(InputMismatchException e){
+                                    System.out.println("No debe ingresar letras");
+                                    lea.nextLine();
+                                }
                                 cobroC=cantidadCompras*avenacompraA;
                                 
                                 if(billete>=cobroC){
@@ -725,8 +812,13 @@ public class LaraSamuelTienda {
                                 }
                                 
                             }else if(avenaOpcion.equalsIgnoreCase("b")){
-                                System.out.print("Cuantos kilogramos de trigo quisiera llevar?: ");
-                                int cantidadCompras=lea.nextInt();
+                                try{
+                                System.out.print("Cuantos kilogramos desea de azucar?: ");
+                                cantidadCompras=lea.nextInt();
+                                }catch(InputMismatchException e){
+                                    System.out.println("No debe ingresar letras");
+                                    lea.nextLine();
+                                }
                                 cobroC=cantidadCompras*avenacompraB;
                                 
                                 if(billete>=cobroC){
@@ -759,8 +851,13 @@ public class LaraSamuelTienda {
                             
                             //cantidadKg+=cantidadCompras;
                         }else if(codigoC==3){
-                            System.out.print("Cuantos kilogramos desea de trigo?: ");
-                            int cantidadCompras=lea.nextInt();
+                            try{
+                            System.out.print("Cuantos kilogramos desea de azucar?: ");
+                            cantidadCompras=lea.nextInt();
+                            }catch(InputMismatchException e){
+                                System.out.println("No debe ingresar letras");
+                                lea.nextLine();
+                            }
                             cobroC=cantidadCompras*trigoCompra;
                             //cantidadKg+=cantidadCompras;
                             if(billete>=cobroC){
@@ -799,8 +896,13 @@ public class LaraSamuelTienda {
                         System.out.println("*   2    *      Avena       *                 *     "+avenaKg+"    *");
                         System.out.println("*        *                  *    B:   L.22    *");
                         System.out.println("************************************************************");
+                        try{
                         System.out.print("Ingresar codigo del producto: ");
-                        int codigoC=lea.nextInt();
+                        codigoC=lea.nextInt();
+                        }catch(InputMismatchException e){
+                            System.out.println("No debe ingresar letras");
+                            lea.nextLine();
+                        }
                         
                         // cliente C compras
                         
@@ -810,8 +912,13 @@ public class LaraSamuelTienda {
                             String avenaOpcion=lea.next();
                             
                             if(avenaOpcion.equalsIgnoreCase("a")){
-                                System.out.print("Cuantos kilogramos de avena desea llevar?: ");
-                                int cantidadCompras=lea.nextInt();
+                                try{
+                                System.out.print("Cuantos kilogramos desea de azucar?: ");
+                                cantidadCompras=lea.nextInt();
+                                }catch(InputMismatchException e){
+                                    System.out.println("No debe ingresar letras");
+                                    lea.nextLine();
+                                }
                                 cobroC=cantidadCompras*avenacompraA;
                                 if(billete>=cobroC){
                                     
@@ -839,8 +946,13 @@ public class LaraSamuelTienda {
                                 }
                                 //cantidadKg+=cantidadCompras;
                             }else if(avenaOpcion.equalsIgnoreCase("b")){
-                                System.out.print("Cuantos kilogramos de avena desea llevar?: ");
-                                int cantidadCompras=lea.nextInt();
+                                try{
+                                System.out.print("Cuantos kilogramos desea de azucar?: ");
+                                cantidadCompras=lea.nextInt();
+                                }catch(InputMismatchException e){
+                                    System.out.println("No debe ingresar letras");
+                                    lea.nextLine();
+                                }
                                 cobroC=cantidadCompras*avenacompraB;
                                 //cantidadKg+=cantidadCompras;
                                 if(billete>=cobroC){
@@ -919,7 +1031,6 @@ public class LaraSamuelTienda {
                     System.out.println("No hay producto estrella");
                 }
                 //g
-                System.out.println("Ranking: ");
                 String productOne="";
                 String productTwo="";
                 String productThree="";
@@ -967,8 +1078,6 @@ public class LaraSamuelTienda {
                         System.out.println("3. " + String.format("%.2f", tercerLugar) + " puntos");
                         System.out.println("4. " + String.format("%.2f", cuartoLugar) + " puntos");
             }else if(opcion==5){
-                //ganancia total variable
-                double gananciaT=0;
                 //formula para sacar dicha ganancia
                 gananciaT=volumenV-volumenC;
                 //evitar que de negativo
@@ -979,9 +1088,13 @@ public class LaraSamuelTienda {
                 System.out.println("CIERRE DE CAJA");
                 System.out.println("Ganancia total: "+String.format("%.2f", gananciaT));
                 System.out.println("");
+                try{
                 System.out.print("Ingresar cantidad de dinero al banco\nSolo el 60% de los ingresos: L.");
-                double guardar=lea.nextInt();
-                
+                guardar=lea.nextInt();
+                }catch(InputMismatchException e){
+                    System.out.println("No debe ingresar letras");
+                    lea.nextLine();
+                }
                 //formula para ingresar el 60 porciento del dinero
                 ingresar=billete*0.6;
                 
@@ -996,12 +1109,6 @@ public class LaraSamuelTienda {
         banco=0;
         ingresar=0;
         oportunidadDiaria=1;
-        
-        //cantidad en kilogramos
-        azucarKg=0;
-        avenaKg=0;
-        trigoKg=0;
-        maizKg=0;
         
         azucarSell=0;
         avenaSell=0;
@@ -1054,6 +1161,10 @@ public class LaraSamuelTienda {
             segundoLugar = 0;
             tercerLugar = 0;
             cuartoLugar = 0;
+            //Cierre de caja
+            gananciaT=0;
+            guardar=0;
+            
             }else{
                 System.out.println("Ya estuvo!");
             }

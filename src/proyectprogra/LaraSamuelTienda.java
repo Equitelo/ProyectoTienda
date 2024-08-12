@@ -111,8 +111,15 @@ public class LaraSamuelTienda {
                 System.out.println("ABRISTE CAJA! ");
                 System.out.println("");
                 if(opcion!=5){
+                    do{
                     System.out.print("Ingresar dinero en caja: L.");
                     caja=lea.nextDouble();
+                    
+                    if(caja<18){
+                        System.out.println("Acuerdate que debes ingresar dinero suficiente.\nPara almenos comprar uno barato.");
+                    }
+                    
+                    }while(caja<18);
                 }
                 if(caja>0){
                     billete+=caja;

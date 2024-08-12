@@ -910,20 +910,29 @@ public class LaraSamuelTienda {
                 }
                 //g
                 System.out.println("Ranking: ");
+                String productOne="";
+                String productTwo="";
+                String productThree="";
+                String productFour="";
+                
                 for (int i = 0; i < 4; i++) {
                     double puntosActuales = 0;
                     switch (i) {
                         case 0:
                             puntosActuales = dineroAzucar;
+                            productOne="Azucar";
                             break;
                         case 1:
                             puntosActuales = dineroAvena;
+                            productTwo="Avena";
                             break;
                         case 2:
                             puntosActuales = dineroTrigo;
+                            productThree="Trigo";
                             break;
                         case 3:
                             puntosActuales = dineroMaiz;
+                            productFour="Maiz";
                             break;
                     }
                         if (puntosActuales > primerLugar) {
@@ -991,7 +1000,7 @@ public class LaraSamuelTienda {
         //Precios productos venta
         
         cobroV=0;
-        
+        decision="no";
         //Precios productos compra
         azucarCompra=25;
         avenacompraA=20;

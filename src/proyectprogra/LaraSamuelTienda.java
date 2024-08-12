@@ -13,6 +13,7 @@ public class LaraSamuelTienda {
         double billete=0;
         double banco=0;
         double ingresar=0;
+        int oportunidadDiaria=1;
         
         //cantidad en kilogramos
         double azucarKg=0;
@@ -110,7 +111,7 @@ public class LaraSamuelTienda {
             if(opcion==1){
                 System.out.println("ABRISTE CAJA! ");
                 System.out.println("");
-                if(opcion!=5){
+                if(oportunidadDiaria==1){
                     do{
                     System.out.print("Ingresar dinero en caja: L.");
                     caja=lea.nextDouble();
@@ -120,6 +121,7 @@ public class LaraSamuelTienda {
                     }
                     
                     }while(caja<18);
+                    oportunidadDiaria--;
                 }
                 if(caja>0){
                     billete+=caja;
@@ -974,6 +976,7 @@ public class LaraSamuelTienda {
         billete=0;
         banco=0;
         ingresar=0;
+        oportunidadDiaria=1;
         
         //cantidad en kilogramos
         azucarKg=0;

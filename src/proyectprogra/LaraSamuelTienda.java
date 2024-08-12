@@ -1,6 +1,7 @@
 package proyectprogra;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class LaraSamuelTienda {
     public static void main(String[] args) {
@@ -99,9 +100,13 @@ public class LaraSamuelTienda {
                                * 6 * Salir del Sistema *
                                *************************
                                """);
+            try{
             System.out.print("Digite opcion a realizar: ");
             opcion=lea.nextInt();
-        
+            }catch(InputMismatchException e){
+                System.out.println("Letras no!");
+                lea.nextLine();
+            }
             if(opcion<1||opcion>6){
                 System.out.println("Ingrese un valor dentro del menu!");
             }
@@ -113,9 +118,13 @@ public class LaraSamuelTienda {
                 System.out.println("");
                 if(oportunidadDiaria==1){
                     do{
+                    try{
                     System.out.print("Ingresar dinero en caja: L.");
                     caja=lea.nextDouble();
-                    
+                    }catch(InputMismatchException e){
+                        System.out.println("Letras no!");
+                        lea.nextLine();
+                    }
                     if(caja<18){
                         System.out.println("Acuerdate que debes ingresar dinero suficiente.\nPara almenos comprar uno barato.");
                     }
@@ -161,6 +170,7 @@ public class LaraSamuelTienda {
                         // cliente A ventas
                         if(codigoV==1){
                             //azucar ventas
+                            
                             System.out.print("Cuantos kilogramos de azucar desea?: "); 
                             int cantidadVenta=lea.nextInt();
                             //logica de facturacion
@@ -952,10 +962,10 @@ public class LaraSamuelTienda {
                         }
                 }
                         System.out.println("\nRanking:");
-                        System.out.println("1. " + primerLugar + " puntos");
-                        System.out.println("2. " + segundoLugar + " puntos");
-                        System.out.println("3. " + tercerLugar + " puntos");
-                        System.out.println("4. " + cuartoLugar + " puntos");
+                        System.out.println("1. " + String.format("%.2f", primerLugar) + " puntos");
+                        System.out.println("2. " + String.format("%.2f", segundoLugar) + " puntos");
+                        System.out.println("3. " + String.format("%.2f", tercerLugar) + " puntos");
+                        System.out.println("4. " + String.format("%.2f", cuartoLugar) + " puntos");
             }else if(opcion==5){
                 //ganancia total variable
                 double gananciaT=0;

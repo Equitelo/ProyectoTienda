@@ -997,7 +997,7 @@ public class LaraSamuelTienda {
                 System.out.println("Numero de Compras realizadas en el dia: "+ingresoC+
                                    "\nNumero de Ventas realizadas en el dia: "+ingresoV);
                 //c
-                margenGana=(volumenV-volumenC/volumenV)*100;
+                margenGana=(volumenV-volumenC)/volumenV*100;
                 if(volumenV<=0){
                     margenGana=0;
                 }
@@ -1031,29 +1031,26 @@ public class LaraSamuelTienda {
                     System.out.println("No hay producto estrella");
                 }
                 //g
-                String productOne="";
-                String productTwo="";
-                String productThree="";
-                String productFour="";
-                
+                System.out.println("Vista previa del ranking: ");
+                System.out.println("Dinero del producto azucar: $."+dineroAzucar);
+                System.out.println("Dinero del producto avena: $."+dineroAvena);
+                System.out.println("Dinero del producto trigo: $."+dineroTrigo);
+                System.out.println("Dinero del producto maiz: $."+dineroMaiz);
+                System.out.println("");
                 for (int i = 0; i < 4; i++) {
                     double puntosActuales = 0;
                     switch (i) {
                         case 0:
                             puntosActuales = dineroAzucar;
-                            productOne="Azucar";
                             break;
                         case 1:
                             puntosActuales = dineroAvena;
-                            productTwo="Avena";
                             break;
                         case 2:
                             puntosActuales = dineroTrigo;
-                            productThree="Trigo";
                             break;
                         case 3:
                             puntosActuales = dineroMaiz;
-                            productFour="Maiz";
                             break;
                     }
                         if (puntosActuales > primerLugar) {
@@ -1105,7 +1102,6 @@ public class LaraSamuelTienda {
                     System.out.println("Solo se permite guardar el 60% en el banco");
                 }
         
-        billete=0;
         banco=0;
         ingresar=0;
         oportunidadDiaria=1;
